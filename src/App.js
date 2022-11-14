@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// eslint-disable-next-line no-unused-vars
+var api = ''
+class App extends React.Component{
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props){
+    super(props)
+    this.state = {
+      latitude : 0,
+      longitude : 0,
+      items : []
+    }
+    this.componentDidMount = this.componentDidMount.bind(this);
+  }
+// axios install and make api work 
+  componentDidMount(){
+    navigator.geolocation.getCurrentPosition((position) =>{
+      this.setState({
+        latitude : position.coords.latitude,
+        longitude: position.coords.longitude
+      })
+       api = `https://fcc-weather-api.glitch.me/api/current?lat=${position.coords.latitude}&lon=${position.coords.longitude}`;
+  })}
+    render()
+    {
+      return(
+        <div>
+          <h1>Hello  world</h1>
+          <button>Click</button>
+          <h2>Longitude: {this.state.latitude}</h2>
+          <h3>Latitude: {this.state.longitude}</h3>
+        
+          
+        </div>
+      )
+    }
 }
+
 
 export default App;
