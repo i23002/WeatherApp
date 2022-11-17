@@ -20,9 +20,14 @@ class App extends React.Component{
             sunrise: '',
             sunset : '',
             weather: '',
-            windspeed: ''
+            windspeed: '',
+            on: true,
+            symbol: '\u00b0'.concat('C'),
+            date:  Date()
+            
 
         };
+        this.toggle = this.toggle.bind(this)
     
       }
       //the most interesting section i learned really appreciate it
@@ -64,10 +69,27 @@ class App extends React.Component{
           })
          })
     }
+    toggle(){
+        if (this.state.on){
+          this.setState(state => ({
+            temp: (state.temp * 9/5)+32,
+            on: false,
+            symbol: "\u2109"
+          }))
+        }
+        if (this.state.on === false){
+          this.setState(state => ({
+            temp: Math.round(((state.temp -32)*5)/9),
+            on: true,
+            symbol: '\u00b0'.concat('C')
+          }))
+        }
+    }
     render(){
               return (
         
               <div>
+                <p>Date: {this.state.date}</p>
                 <h1>{this.state.lat}</h1>
                 <h1>{this.state.lon}</h1>
                 <h1>Temparature: {this.state.temp}</h1>
@@ -77,7 +99,7 @@ class App extends React.Component{
                 <h1>weather: {this.state.weather}</h1>
                 <h1>WIND SPEED: {this.state.windspeed}</h1>
                 <h4>Using geolocation JavaScript API in React</h4>
-        
+                <button onClick={this.toggle}>{this.state.symbol}</button>
               </div>
         
             );
