@@ -89,17 +89,29 @@ class App extends React.Component{
               return (
         
               <div>
-                <p>Date: {this.state.date}</p>
-                <h1>{this.state.lat}</h1>
-                <h1>{this.state.lon}</h1>
-                <h1>Temparature: {this.state.temp}</h1>
-                <h1>Humidity: {this.state.humidity}</h1>
-                <h1>City: {this.state.city}</h1>
-                <h1>Country: {this.state.country}</h1>
-                <h1>weather: {this.state.weather}</h1>
-                <h1>WIND SPEED: {this.state.windspeed}</h1>
-                <h4>Using geolocation JavaScript API in React</h4>
-                <button onClick={this.toggle}>{this.state.symbol}</button>
+                <div id="navbar">
+                  <div><p>Latitude: {this.state.lat} </p></div>
+                  <div><p>Longitude: {this.state.lon}</p></div>
+                  <div><p>City: {this.state.city}</p></div>
+                  <div><p>Country: {this.state.country}</p></div>
+                </div>
+                <div id='outer'>
+                <div id="main">
+                  <p>Weather: {this.state.weather}</p>
+                  <div id="inline">
+                  <p><i class='fas fa-temperature-high'></i>: {this.state.temp}</p>
+                  <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                </div>
+                <div id="icon1">
+                  <i class='fas fa-cloud-sun' id="icon"></i>
+                </div>
+                </div>
+                <div id="details">
+                  <p>Humidity: {this.state.humidity}</p>
+                  <p><i class='fas fa-wind' id='wind'></i>: {this.state.windspeed}</p>
+                  <p>Date: {this.state.date}</p>
+                </div>
               </div>
         
             );
