@@ -36,3 +36,90 @@
     transform: rotate(360deg);
   }
 }
+
+#navbar{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid white;
+  background-color: white;
+  margin-left: 3%;
+  margin-right: 3%;
+  border-radius: 25px;
+  padding-top: 5px;
+}
+#navbar div{
+  margin-left: 10%;
+  margin-right: 5%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2.5vh;
+}
+#outer{
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+#main{
+  display: block;
+  margin-top: 10%;
+  border: 5px solid white;
+  border-radius: 5%;
+  margin-left: 0.5%;
+  margin-right: 80%;
+  padding-left: 5px;
+  padding-right: -5px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: white;
+}
+#main p{
+  font-size: 4.5vh;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#inline{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+button{
+  width: 20%;
+  height: 5%;
+  font-size: 2.5vh;
+ 
+}
+
+#details{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 40vh;
+  justify-content:flex-start;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.5vh;
+  border: 5px solid white;
+  background-color: white;
+  margin-left: 3%;
+  margin-right: 3%;
+  border-radius: 25px;
+  padding-top: 5px;
+  padding-bottom: -5px;
+
+}
+#details p{
+  margin-left: 10%;
+  margin-right: 5%;
+}
+#icon{
+  font-size: 20vh;
+  color: #FFE87C;
+}
+#icon1{
+  margin-top: 10%;
+  margin-left: -10%;
+}
+#wind{
+  font-size: 5vh;
+}
+
