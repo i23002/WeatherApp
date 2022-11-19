@@ -86,8 +86,65 @@ class App extends React.Component{
         }
     }
     render(){
-              return (
-        
+      if(this.state.weather === "Haze"){
+        return(
+          <div>
+                <div id="navbar">
+                  <div><p>Latitude: {this.state.lat} </p></div>
+                  <div><p>Longitude: {this.state.lon}</p></div>
+                  <div><p>City: {this.state.city}</p></div>
+                  <div><p>Country: {this.state.country}</p></div>
+                </div>
+                <div id='outer'>
+                <div id="main">
+                  <p>Weather: {this.state.weather}</p>
+                  <div id="inline">
+                  <p><i class='fas fa-temperature-high'></i>: {this.state.temp}</p>
+                  <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                </div>
+                <div id="icon1">
+                  <i class='fas fa-water' id="icon" style={{color: "white"}}></i>
+                </div>
+                </div>
+                <div id="details">
+                  <p>Humidity: {this.state.humidity}</p>
+                  <p><i class='fas fa-wind' id='wind' ></i>: {this.state.windspeed} M/S</p>
+                  <p>Date: {this.state.date}</p>
+                </div>
+              </div>
+        )
+      }
+      if (this.state.weather === "Cloudy" || this.state.weather === "Rainy"){
+        return(
+          <div>
+                <div id="navbar">
+                  <div><p>Latitude: {this.state.lat} </p></div>
+                  <div><p>Longitude: {this.state.lon}</p></div>
+                  <div><p>City: {this.state.city}</p></div>
+                  <div><p>Country: {this.state.country}</p></div>
+                </div>
+                <div id='outer'>
+                <div id="main">
+                  <p>Weather: {this.state.weather}</p>
+                  <div id="inline">
+                  <p><i class='fas fa-temperature-high'></i>: {this.state.temp}</p>
+                  <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                </div>
+                <div id="icon1">
+                  <i class='fas fa-cloud-rain' id="icon" style={{color: "black"}}></i>
+                </div>
+                </div>
+                <div id="details">
+                  <p>Humidity: {this.state.humidity}</p>
+                  <p><i class='fas fa-wind' id='wind' ></i>: {this.state.windspeed} M/S</p>
+                  <p>Date: {this.state.date}</p>
+                </div>
+              </div>
+        )
+      }
+      return (
               <div>
                 <div id="navbar">
                   <div><p>Latitude: {this.state.lat} </p></div>
@@ -104,12 +161,12 @@ class App extends React.Component{
                   </div>
                 </div>
                 <div id="icon1">
-                  <i class='fas fa-cloud-sun' id="icon"></i>
+                  <i class='fas fa-cloud-sun' id="icon" style={{color: "yellow"}}></i>
                 </div>
                 </div>
                 <div id="details">
                   <p>Humidity: {this.state.humidity}</p>
-                  <p><i class='fas fa-wind' id='wind'></i>: {this.state.windspeed}</p>
+                  <p><i class='fas fa-wind' id='wind'></i>: {this.state.windspeed} M/S</p>
                   <p>Date: {this.state.date}</p>
                 </div>
               </div>
