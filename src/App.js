@@ -2,7 +2,8 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import ReactAnimatedWeather from 'react-animated-weather';
+import ReactAnimatedWeather from 'react-animated-weather';
+
 
 
 const defaults = {
@@ -10,6 +11,7 @@ const defaults = {
   size: 112,
   animate: true,
 };
+
 // eslint-disable-next-line no-unused-vars
 class App extends React.Component{
 
