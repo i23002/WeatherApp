@@ -7,7 +7,8 @@ import ReactAnimatedWeather from 'react-animated-weather';
 
 
 const defaults = {
-  color: "goldenrod",
+  icon: "",
+  color: "white",
   size: 112,
   animate: true,
 };
@@ -33,7 +34,7 @@ class App extends React.Component{
             on: true,
             symbol: '\u00b0'.concat('C'),
             date:  Date(),
-            icon: "CLEAR_DAY"
+            icon: ""
             
 
         };
@@ -79,37 +80,6 @@ class App extends React.Component{
             
           })
          })
-         switch (this.state.weather) {
-          case "Haze":
-            this.setState({ icon: "CLEAR_DAY" });
-            break;
-          case "Clouds":
-            this.setState({ icon: "CLOUDY" });
-            break;
-          case "Rain":
-            this.setState({ icon: "RAIN" });
-            break;
-          case "Snow":
-            this.setState({ icon: "SNOW" });
-            break;
-          case "Dust":
-            this.setState({ icon: "WIND" });
-            break;
-          case "Drizzle":
-            this.setState({ icon: "SLEET" });
-            break;
-          case "Fog":
-            this.setState({ icon: "FOG" });
-            break;
-          case "Smoke":
-            this.setState({ icon: "FOG" });
-            break;
-          case "Tornado":
-            this.setState({ icon: "WIND" });
-            break;
-          default:
-            this.setState({ icon: "CLEAR_DAY" });
-        }
     };
     toggle(){
         if (this.state.on){
@@ -129,6 +99,179 @@ class App extends React.Component{
     }
     
     render(){
+      if (this.state.weather === "Clouds"){
+        return (
+          <div>
+            <div id="navbar">
+              <div><p>Latitude: {this.state.lat} </p></div>
+              <div><p>Longitude: {this.state.lon}</p></div>
+              <div><p>City: {this.state.city}</p></div>
+              <div><p>Country: {this.state.country}</p></div>
+            </div>
+            <div id='outer'>
+            <div id="main">
+              <p>Weather: {this.state.weather}</p>
+              <div id="inline">
+              <p>Temp: {this.state.temp}</p>
+              <button onClick={this.toggle}>{this.state.symbol}</button>
+              </div>
+            </div>
+            <div id="icon1">
+            <ReactAnimatedWeather
+            icon={"CLOUDY"}
+            color={defaults.color}
+            size={defaults.size}
+            animate={defaults.animate}
+          />
+            </div>
+            </div>
+            <div id="details">
+              <p>Humidity: {this.state.humidity}</p>
+              <p>Wind: {this.state.windspeed} M/S</p>
+              <p>Date: {this.state.date}</p>
+            </div>
+          </div>
+    
+        );
+    
+      }if (this.state.weather === "Rain"){
+        return (
+          <div>
+            <div id="navbar">
+              <div><p>Latitude: {this.state.lat} </p></div>
+              <div><p>Longitude: {this.state.lon}</p></div>
+              <div><p>City: {this.state.city}</p></div>
+              <div><p>Country: {this.state.country}</p></div>
+            </div>
+            <div id='outer'>
+            <div id="main">
+              <p>Weather: {this.state.weather}</p>
+              <div id="inline">
+              <p>Temp: {this.state.temp}</p>
+              <button onClick={this.toggle}>{this.state.symbol}</button>
+              </div>
+            </div>
+            <div id="icon1">
+            <ReactAnimatedWeather
+            icon={"RAIN"}
+            color={defaults.color}
+            size={defaults.size}
+            animate={defaults.animate}
+          />
+            </div>
+            </div>
+            <div id="details">
+              <p>Humidity: {this.state.humidity}</p>
+              <p>Wind: {this.state.windspeed} M/S</p>
+              <p>Date: {this.state.date}</p>
+            </div>
+          </div>
+    
+        );
+
+      }if (this.state.weather === "Snow"){
+        return (
+          <div>
+            <div id="navbar">
+              <div><p>Latitude: {this.state.lat} </p></div>
+              <div><p>Longitude: {this.state.lon}</p></div>
+              <div><p>City: {this.state.city}</p></div>
+              <div><p>Country: {this.state.country}</p></div>
+            </div>
+            <div id='outer'>
+            <div id="main">
+              <p>Weather: {this.state.weather}</p>
+              <div id="inline">
+              <p>Temp: {this.state.temp}</p>
+              <button onClick={this.toggle}>{this.state.symbol}</button>
+              </div>
+            </div>
+            <div id="icon1">
+            <ReactAnimatedWeather
+            icon={"SNOW"}
+            color={defaults.color}
+            size={defaults.size}
+            animate={defaults.animate}
+          />
+            </div>
+            </div>
+            <div id="details">
+              <p>Humidity: {this.state.humidity}</p>
+              <p>Wind: {this.state.windspeed} M/S</p>
+              <p>Date: {this.state.date}</p>
+            </div>
+          </div>
+    
+        );
+      }if(this.state.weather === "Dust" || this.state.weather === "Tornado"){
+        return (
+          <div>
+            <div id="navbar">
+              <div><p>Latitude: {this.state.lat} </p></div>
+              <div><p>Longitude: {this.state.lon}</p></div>
+              <div><p>City: {this.state.city}</p></div>
+              <div><p>Country: {this.state.country}</p></div>
+            </div>
+            <div id='outer'>
+            <div id="main">
+              <p>Weather: {this.state.weather}</p>
+              <div id="inline">
+              <p>Temp: {this.state.temp}</p>
+              <button onClick={this.toggle}>{this.state.symbol}</button>
+              </div>
+            </div>
+            <div id="icon1">
+            <ReactAnimatedWeather
+            icon={"WIND"}
+            color={defaults.color}
+            size={defaults.size}
+            animate={defaults.animate}
+          />
+            </div>
+            </div>
+            <div id="details">
+              <p>Humidity: {this.state.humidity}</p>
+              <p>Wind: {this.state.windspeed} M/S</p>
+              <p>Date: {this.state.date}</p>
+            </div>
+          </div>
+    
+        );
+      }if(this.state.weather === "Fog" || this.state.weather === "Smoke"){
+        return (
+          <div>
+            <div id="navbar">
+              <div><p>Latitude: {this.state.lat} </p></div>
+              <div><p>Longitude: {this.state.lon}</p></div>
+              <div><p>City: {this.state.city}</p></div>
+              <div><p>Country: {this.state.country}</p></div>
+            </div>
+            <div id='outer'>
+            <div id="main">
+              <p>Weather: {this.state.weather}</p>
+              <div id="inline">
+              <p>Temp: {this.state.temp}</p>
+              <button onClick={this.toggle}>{this.state.symbol}</button>
+              </div>
+            </div>
+            <div id="icon1">
+            <ReactAnimatedWeather
+            icon={"FOG"}
+            color={defaults.color}
+            size={defaults.size}
+            animate={defaults.animate}
+          />
+            </div>
+            </div>
+            <div id="details">
+              <p>Humidity: {this.state.humidity}</p>
+              <p>Wind: {this.state.windspeed} M/S</p>
+              <p>Date: {this.state.date}</p>
+            </div>
+          </div>
+    
+        );
+      }
       return (
               <div>
                 <div id="navbar">
@@ -147,7 +290,7 @@ class App extends React.Component{
                 </div>
                 <div id="icon1">
                 <ReactAnimatedWeather
-                icon={this.state.icon}
+                icon={"CLEAR_DAY"}
                 color={defaults.color}
                 size={defaults.size}
                 animate={defaults.animate}
@@ -163,7 +306,7 @@ class App extends React.Component{
         
             );
         
-          }
+  }
     
 }
 
