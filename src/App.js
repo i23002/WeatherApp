@@ -99,17 +99,17 @@ class App extends React.Component{
                 <div id="main">
                   <p>Weather: {this.state.weather}</p>
                   <div id="inline">
-                  <p><i class='fas fa-temperature-high'></i>: {this.state.temp}</p>
+                  <p><i className='fas fa-temperature-high'></i>: {this.state.temp}</p>
                   <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
                 </div>
                 <div id="icon1">
-                  <i class='fas fa-water' id="icon" style={{color: "white"}}></i>
+                  <i className='fas fa-water' id="icon" style={{color: "white"}}></i>
                 </div>
                 </div>
                 <div id="details">
                   <p>Humidity: {this.state.humidity}</p>
-                  <p><i class='fas fa-wind' id='wind' ></i>: {this.state.windspeed} M/S</p>
+                  <p><i className='fas fa-wind' id='wind' ></i>: {this.state.windspeed} M/S</p>
                   <p>Date: {this.state.date}</p>
                 </div>
               </div>
@@ -128,17 +128,17 @@ class App extends React.Component{
                 <div id="main">
                   <p>Weather: {this.state.weather}</p>
                   <div id="inline">
-                  <p><i class='fas fa-temperature-high'></i>: {this.state.temp}</p>
+                  <p><i className='fas fa-temperature-high'></i>: {this.state.temp}</p>
                   <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
                 </div>
                 <div id="icon1">
-                  <i class='fas fa-cloud-rain' id="icon" style={{color: "black"}}></i>
+                  <i className='fas fa-cloud-rain' id="icon" style={{color: "black"}}></i>
                 </div>
                 </div>
                 <div id="details">
                   <p>Humidity: {this.state.humidity}</p>
-                  <p><i class='fas fa-wind' id='wind' ></i>: {this.state.windspeed} M/S</p>
+                  <p><i className='fas fa-wind' id='wind' ></i>: {this.state.windspeed} M/S</p>
                   <p>Date: {this.state.date}</p>
                 </div>
               </div>
@@ -156,17 +156,17 @@ class App extends React.Component{
                 <div id="main">
                   <p>Weather: {this.state.weather}</p>
                   <div id="inline">
-                  <p><i class='fas fa-temperature-high'></i>: {this.state.temp}</p>
+                  <p><i className='fas fa-temperature-high'></i>: {this.state.temp}</p>
                   <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
                 </div>
                 <div id="icon1">
-                  <i class='fas fa-cloud-sun' id="icon" style={{color: "yellow"}}></i>
+                  <i className='fas fa-cloud-sun' id="icon" style={{color: "yellow"}}></i>
                 </div>
                 </div>
                 <div id="details">
                   <p>Humidity: {this.state.humidity}</p>
-                  <p><i class='fas fa-wind' id='wind'></i>: {this.state.windspeed} M/S</p>
+                  <p><i className='fas fa-wind' id='wind'></i>: {this.state.windspeed} M/S</p>
                   <p>Date: {this.state.date}</p>
                 </div>
               </div>
