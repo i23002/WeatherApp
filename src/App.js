@@ -37,7 +37,8 @@ class App extends React.Component{
             
 
         };
-        this.toggle = this.toggle.bind(this)
+        this.toggle = this.toggle.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     
       }
       //the most interesting section i learned really appreciate it
