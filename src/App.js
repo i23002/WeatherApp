@@ -12,6 +12,13 @@ const defaults = {
   size: 112,
   animate: true,
 };
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '0ae0998a84msh85ac40d01c86c2cp141b55jsn71a55a5245ca',
+    'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
+  }
+};
 
 // eslint-disable-next-line no-unused-vars
 class App extends React.Component{
@@ -34,7 +41,14 @@ class App extends React.Component{
             on: true,
             symbol: '\u00b0'.concat('C'),
             date:  Date(),
-            icon: ""
+            icon: "",
+            hourFirst: "",
+            tempFirst: 0,
+            hourSec:"",
+            tempSec:0,
+            hourThird:"",
+            tempThird:0
+
             
 
         };
@@ -80,6 +94,15 @@ class App extends React.Component{
             
           })
          })
+         const api_call_2 = fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,dewpoint_2m,rain,snowfall,windspeed_10m`)
+         .then(res => res.json())
+         .then(result => {
+          this.setState({
+            hourFirst: result.hourly.time[13],
+            tempFirst: result.hourly.temperature_2m[13]
+          })
+         })
+
     };
     toggle(){
         if (this.state.on){
@@ -301,6 +324,10 @@ class App extends React.Component{
                   <p>Humidity: {this.state.humidity}</p>
                   <p>Wind: {this.state.windspeed} M/S</p>
                   <p>Date: {this.state.date}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.hourFirst}</p>
+                  <p>Temp: {this.state.tempFirst}</p>
                 </div>
               </div>
         
