@@ -5,6 +5,20 @@ import axios from 'axios';
 import ReactAnimatedWeather from 'react-animated-weather';
 
 
+const d = new Date();
+const h = d.getHours();
+var curr = h;
+var next = h+1;
+var secNext = h +2;
+
+if (h === 0){
+ curr = 12;
+}
+if (h +1 === 24 && h+2 === 25){
+  next = 12;
+  secNext = 1;
+}
+
 
 const defaults = {
   icon: "",
@@ -42,12 +56,12 @@ class App extends React.Component{
             symbol: '\u00b0'.concat('C'),
             date:  Date(),
             icon: "",
-            hourFirst: "",
             tempFirst: 0,
-            hourSec:"",
-            tempSec:0,
-            hourThird:"",
-            tempThird:0
+            tempSec : 0,
+            tempThird: 0,
+            timeFirst: 0,
+            timeSec: 0,
+            timeThird: 0
 
             
 
@@ -98,8 +112,12 @@ class App extends React.Component{
          .then(res => res.json())
          .then(result => {
           this.setState({
-            hourFirst: result.hourly.time[13],
-            tempFirst: result.hourly.temperature_2m[13]
+            tempFirst: result.hourly.temperature_2m[h],
+            tempSec: result.hourly.temperature_2m[h+1],
+            tempThird: result.hourly.temperature_2m[h+2],
+            timeFirst: curr,
+            timeSec: next,
+            timeThird: secNext
           })
          })
 
@@ -153,6 +171,21 @@ class App extends React.Component{
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
+                <div>
+                  <p>time: {this.state.timeFirst}</p>
+                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>H : {h}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeSec}</p>
+                  <p>Temp: {this.state.tempSec}</p>
+                  <p>H : {next}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeThird}</p>
+                  <p>Temp: {this.state.tempThird}</p>
+                  <p>H : {secNext}</p>
+                </div>
           </div>
     
         );
@@ -188,6 +221,21 @@ class App extends React.Component{
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
+            <div>
+                  <p>time: {this.state.timeFirst}</p>
+                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>H : {h}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeSec}</p>
+                  <p>Temp: {this.state.tempSec}</p>
+                  <p>H : {next}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeThird}</p>
+                  <p>Temp: {this.state.tempThird}</p>
+                  <p>H : {secNext}</p>
+                </div>
           </div>
     
         );
@@ -223,6 +271,21 @@ class App extends React.Component{
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
+            <div>
+                  <p>time: {this.state.timeFirst}</p>
+                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>H : {h}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeSec}</p>
+                  <p>Temp: {this.state.tempSec}</p>
+                  <p>H : {next}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeThird}</p>
+                  <p>Temp: {this.state.tempThird}</p>
+                  <p>H : {secNext}</p>
+                </div>
           </div>
     
         );
@@ -257,6 +320,21 @@ class App extends React.Component{
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
+            <div>
+                  <p>time: {this.state.timeFirst}</p>
+                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>H : {h}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeSec}</p>
+                  <p>Temp: {this.state.tempSec}</p>
+                  <p>H : {next}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeThird}</p>
+                  <p>Temp: {this.state.tempThird}</p>
+                  <p>H : {secNext}</p>
+                </div>
           </div>
     
         );
@@ -291,6 +369,21 @@ class App extends React.Component{
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
+            <div>
+                  <p>time: {this.state.timeFirst}</p>
+                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>H : {h}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeSec}</p>
+                  <p>Temp: {this.state.tempSec}</p>
+                  <p>H : {next}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeThird}</p>
+                  <p>Temp: {this.state.tempThird}</p>
+                  <p>H : {secNext}</p>
+                </div>
           </div>
     
         );
@@ -326,8 +419,19 @@ class App extends React.Component{
                   <p>Date: {this.state.date}</p>
                 </div>
                 <div>
-                  <p>time: {this.state.hourFirst}</p>
+                  <p>time: {this.state.timeFirst}</p>
                   <p>Temp: {this.state.tempFirst}</p>
+                  <p>H : {h}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeSec}</p>
+                  <p>Temp: {this.state.tempSec}</p>
+                  <p>H : {next}</p>
+                </div>
+                <div>
+                  <p>time: {this.state.timeThird}</p>
+                  <p>Temp: {this.state.tempThird}</p>
+                  <p>H : {secNext}</p>
                 </div>
               </div>
         
