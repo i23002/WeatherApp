@@ -6,6 +6,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 
 
 const d = new Date();
+
 const h = d.getHours();
 var curr = h;
 var next = h+1;
@@ -137,20 +138,30 @@ class App extends React.Component{
       if (this.state.weather === "Clouds"){
         return (
           <div>
-            <div id="navbar">
-              <div><p>Latitude: {this.state.lat} </p></div>
-              <div><p>Longitude: {this.state.lon}</p></div>
-              <div><p>City: {this.state.city}</p></div>
-              <div><p>Country: {this.state.country}</p></div>
-            </div>
-            <div id='outer'>
-            <div id="main">
-              <p>Weather: {this.state.weather}</p>
-              <div id="inline">
-              <p>Temp: {this.state.temp}</p>
-              <button onClick={this.toggle}>{this.state.symbol}</button>
-              </div>
-            </div>
+          <div>
+            <table>
+                  <tr>
+                    <th>Latitude: {this.state.lat}</th>
+                    <th>Longitude: {this.state.lon}</th>
+                    <th>City: {this.state.city}</th>
+                    <th>Country: {this.state.country}</th>
+                  </tr>
+                </table>
+                <div id="row">
+                  <div id="innerrow">
+                <main>
+                  <div>
+                    <p>{this.state.temp}</p>
+                    <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                  <p>{this.state.weather}</p>
+                </main>
+                <section>
+                    <p>Humidity: {this.state.humidity}</p>
+                    <p>Wind: {this.state.windspeed} M/S</p>
+                    <p>Date: {this.state.date}</p>
+                </section>
+                </div>
             <div id="icon1">
             <ReactAnimatedWeather
             icon={"CLOUDY"}
@@ -160,26 +171,29 @@ class App extends React.Component{
           />
             </div>
             </div>
+            </div>
             <div id="details">
               <p>Humidity: {this.state.humidity}</p>
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
-                <div>
+            <div id="forecast">
+                <div id="item1">
                   <p>time: {this.state.timeFirst}</p>
                   <p>Temp: {this.state.tempFirst}</p>
                   <p>H : {h}</p>
                 </div>
-                <div>
+                <div id="item2">
                   <p>time: {this.state.timeSec}</p>
                   <p>Temp: {this.state.tempSec}</p>
                   <p>H : {next}</p>
                 </div>
-                <div>
+                <div id="item3">
                   <p>time: {this.state.timeThird}</p>
                   <p>Temp: {this.state.tempThird}</p>
                   <p>H : {secNext}</p>
                 </div>
+            </div>
           </div>
     
         );
@@ -187,20 +201,30 @@ class App extends React.Component{
       }if (this.state.weather === "Rain"){
         return (
           <div>
-            <div id="navbar">
-              <div><p>Latitude: {this.state.lat} </p></div>
-              <div><p>Longitude: {this.state.lon}</p></div>
-              <div><p>City: {this.state.city}</p></div>
-              <div><p>Country: {this.state.country}</p></div>
-            </div>
-            <div id='outer'>
-            <div id="main">
-              <p>Weather: {this.state.weather}</p>
-              <div id="inline">
-              <p>Temp: {this.state.temp}</p>
-              <button onClick={this.toggle}>{this.state.symbol}</button>
-              </div>
-            </div>
+          <div>
+           <table>
+                  <tr>
+                    <th>Latitude: {this.state.lat}</th>
+                    <th>Longitude: {this.state.lon}</th>
+                    <th>City: {this.state.city}</th>
+                    <th>Country: {this.state.country}</th>
+                  </tr>
+                </table>
+                <div id="row">
+                  <div id="innerrow">
+                <main>
+                  <div>
+                    <p>{this.state.temp}</p>
+                    <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                  <p>{this.state.weather}</p>
+                </main>
+                <section>
+                    <p>Humidity: {this.state.humidity}</p>
+                    <p>Wind: {this.state.windspeed} M/S</p>
+                    <p>Date: {this.state.date}</p>
+                </section>
+                </div>
             <div id="icon1">
             <ReactAnimatedWeather
             icon={"RAIN"}
@@ -209,48 +233,61 @@ class App extends React.Component{
             animate={defaults.animate}
           />
             </div>
-            </div>
+          </div>
+        </div>
             <div id="details">
               <p>Humidity: {this.state.humidity}</p>
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
-            <div>
+            <div id="forecast">
+            <div id="item1">
                   <p>time: {this.state.timeFirst}</p>
-                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>{this.state.tempFirst}{'\u00b0'.concat('C')}</p>
                   <p>H : {h}</p>
                 </div>
-                <div>
+                <div id="item2">
                   <p>time: {this.state.timeSec}</p>
-                  <p>Temp: {this.state.tempSec}</p>
+                  <p>Temp: {this.state.tempSec}{'\u00b0'.concat('C')}</p>
                   <p>H : {next}</p>
                 </div>
-                <div>
+                <div id="item3">
                   <p>time: {this.state.timeThird}</p>
-                  <p>Temp: {this.state.tempThird}</p>
+                  <p>Temp: {this.state.tempThird}{'\u00b0'.concat('C')}</p>
                   <p>H : {secNext}</p>
                 </div>
+            </div>
           </div>
     
         );
 
       }if (this.state.weather === "Snow"){
         return (
+        <div>
           <div>
-            <div id="navbar">
-              <div><p>Latitude: {this.state.lat} </p></div>
-              <div><p>Longitude: {this.state.lon}</p></div>
-              <div><p>City: {this.state.city}</p></div>
-              <div><p>Country: {this.state.country}</p></div>
-            </div>
-            <div id='outer'>
-            <div id="main">
-              <p>Weather: {this.state.weather}</p>
-              <div id="inline">
-              <p>Temp: {this.state.temp}</p>
-              <button onClick={this.toggle}>{this.state.symbol}</button>
-              </div>
-            </div>
+            <table>
+                  <tr>
+                    <th>Latitude: {this.state.lat}</th>
+                    <th>Longitude: {this.state.lon}</th>
+                    <th>City: {this.state.city}</th>
+                    <th>Country: {this.state.country}</th>
+                  </tr>
+                </table>
+                <div id="row">
+                  <div id="innerrow">
+                <main>
+                  <div>
+                    <p>{this.state.temp}</p>
+                    <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                  <p>{this.state.weather}</p>
+                </main>
+                <section>
+                    <p>Humidity: {this.state.humidity}</p>
+                    <p>Wind: {this.state.windspeed} M/S</p>
+                    <p>Date: {this.state.date}</p>
+                </section>
+                </div>
             <div id="icon1">
             <ReactAnimatedWeather
             icon={"SNOW"}
@@ -260,46 +297,59 @@ class App extends React.Component{
           />
             </div>
             </div>
+            </div>
             <div id="details">
               <p>Humidity: {this.state.humidity}</p>
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
-            <div>
+            <div id="forecast">
+            <div id="item1">
                   <p>time: {this.state.timeFirst}</p>
-                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>{this.state.tempFirst}{'\u00b0'.concat('C')}</p>
                   <p>H : {h}</p>
                 </div>
-                <div>
+                <div id="item2">
                   <p>time: {this.state.timeSec}</p>
-                  <p>Temp: {this.state.tempSec}</p>
+                  <p>{this.state.tempSec}{'\u00b0'.concat('C')}</p>
                   <p>H : {next}</p>
                 </div>
-                <div>
+                <div id="item3">
                   <p>time: {this.state.timeThird}</p>
-                  <p>Temp: {this.state.tempThird}</p>
+                  <p>{this.state.tempThird}{'\u00b0'.concat('C')}</p>
                   <p>H : {secNext}</p>
                 </div>
+            </div>
           </div>
     
         );
       }if(this.state.weather === "Dust" || this.state.weather === "Tornado"){
         return (
+        <div>
           <div>
-            <div id="navbar">
-              <div><p>Latitude: {this.state.lat} </p></div>
-              <div><p>Longitude: {this.state.lon}</p></div>
-              <div><p>City: {this.state.city}</p></div>
-              <div><p>Country: {this.state.country}</p></div>
-            </div>
-            <div id='outer'>
-            <div id="main">
-              <p>Weather: {this.state.weather}</p>
-              <div id="inline">
-              <p>Temp: {this.state.temp}</p>
-              <button onClick={this.toggle}>{this.state.symbol}</button>
-              </div>
-            </div>
+            <table>
+                  <tr>
+                    <th>Latitude: {this.state.lat}</th>
+                    <th>Longitude: {this.state.lon}</th>
+                    <th>City: {this.state.city}</th>
+                    <th>Country: {this.state.country}</th>
+                  </tr>
+                </table>
+                <div id='row'>
+                  <div id="innerrow">
+                <main>
+                  <div>
+                    <p>{this.state.temp}</p>
+                    <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                  <p>{this.state.weather}</p>
+                </main>
+                <section>
+                    <p>Humidity: {this.state.humidity}</p>
+                    <p>Wind: {this.state.windspeed} M/S</p>
+                    <p>Date: {this.state.date}</p>
+                </section>
+                 </div>
             <div id="icon1">
             <ReactAnimatedWeather
             icon={"WIND"}
@@ -309,46 +359,60 @@ class App extends React.Component{
           />
             </div>
             </div>
+            </div>
             <div id="details">
               <p>Humidity: {this.state.humidity}</p>
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
-            <div>
+            <div id="forecast">
+            <div id="item1">
                   <p>time: {this.state.timeFirst}</p>
-                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>{this.state.tempFirst}{'\u00b0'.concat('C')}</p>
                   <p>H : {h}</p>
                 </div>
-                <div>
+                <div id="item2">
                   <p>time: {this.state.timeSec}</p>
-                  <p>Temp: {this.state.tempSec}</p>
-                  <p>H : {next}</p>
+                  <p>{this.state.tempSec}{'\u00b0'.concat('C')}</p>
+                  <p></p>
                 </div>
-                <div>
+                <div id="item3">
                   <p>time: {this.state.timeThird}</p>
-                  <p>Temp: {this.state.tempThird}</p>
+                  <p>{this.state.tempThird}{'\u00b0'.concat('C')}</p>
                   <p>H : {secNext}</p>
                 </div>
-          </div>
+            </div>
+        </div>
     
         );
       }if(this.state.weather === "Fog" || this.state.weather === "Smoke"){
         return (
           <div>
-            <div id="navbar">
-              <div><p>Latitude: {this.state.lat} </p></div>
-              <div><p>Longitude: {this.state.lon}</p></div>
-              <div><p>City: {this.state.city}</p></div>
-              <div><p>Country: {this.state.country}</p></div>
-            </div>
-            <div id='outer'>
-            <div id="main">
-              <p>Weather: {this.state.weather}</p>
-              <div id="inline">
-              <p>Temp: {this.state.temp}</p>
-              <button onClick={this.toggle}>{this.state.symbol}</button>
+            <div>
+            <table>
+                  <tr>
+                    <th>Latitude: {this.state.lat}</th>
+                    <th>Longitude: {this.state.lon}</th>
+                    <th>City: {this.state.city}</th>
+                    <th>Country: {this.state.country}</th>
+                  </tr>
+            </table>
+            <div id="row">
+              <div id="innerrow">
+            <main>
+                  <div>
+                    <p>{this.state.temp}</p>
+                    <button onClick={this.toggle}>{this.state.symbol}</button>
+                  </div>
+                  <p>{this.state.weather}</p>
+                </main>
+                <section>
+                    <p>Humidity: {this.state.humidity}</p>
+                    <p>Wind: {this.state.windspeed} M/S</p>
+                    <p>Date: {this.state.date}</p>
+                </section>
               </div>
-            </div>
+              
             <div id="icon1">
             <ReactAnimatedWeather
             icon={"FOG"}
@@ -358,76 +422,85 @@ class App extends React.Component{
           />
             </div>
             </div>
+            </div>
             <div id="details">
               <p>Humidity: {this.state.humidity}</p>
               <p>Wind: {this.state.windspeed} M/S</p>
               <p>Date: {this.state.date}</p>
             </div>
-            <div>
+          <div id="forecast">
+            <div id="item1">
                   <p>time: {this.state.timeFirst}</p>
-                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>{this.state.tempFirst}{'\u00b0'.concat('C')}</p>
                   <p>H : {h}</p>
                 </div>
-                <div>
+                <div id="item2">
                   <p>time: {this.state.timeSec}</p>
-                  <p>Temp: {this.state.tempSec}</p>
+                  <p>{this.state.tempSec}{'\u00b0'.concat('C')}</p>
                   <p>H : {next}</p>
                 </div>
-                <div>
+                <div id="item3">
                   <p>time: {this.state.timeThird}</p>
-                  <p>Temp: {this.state.tempThird}</p>
+                  <p>{this.state.tempThird}{'\u00b0'.concat('C')}</p>
                   <p>H : {secNext}</p>
                 </div>
+            </div>
           </div>
     
         );
       }
       return (
-              <div>
-                <div id="navbar">
-                  <div><p>Latitude: {this.state.lat} </p></div>
-                  <div><p>Longitude: {this.state.lon}</p></div>
-                  <div><p>City: {this.state.city}</p></div>
-                  <div><p>Country: {this.state.country}</p></div>
-                </div>
-                <div id='outer'>
-                <div id="main">
-                  <p>Weather: {this.state.weather}</p>
-                  <div id="inline">
-                  <p>Temp: {this.state.temp}</p>
-                  <button onClick={this.toggle}>{this.state.symbol}</button>
+            <div>
+                <table>
+                  <tr>
+                    <th>Latitude: {this.state.lat}</th>
+                    <th>Longitude: {this.state.lon}</th>
+                    <th>City: {this.state.city}</th>
+                    <th>Country: {this.state.country}</th>
+                  </tr>
+                </table>
+                <div id="row">
+                  <div id="innerrow">
+                <main>
+                  <div>
+                    <p>{this.state.temp}</p>
+                    <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
+                 
+                  <p id="weather">{this.state.weather}</p>
+                </main>
+                <section>
+                    <p>Humidity: {this.state.humidity}</p>
+                    <p>Wind: {this.state.windspeed} M/S</p>
+                    <p>Date: {this.state.date}</p>
+                </section>
                 </div>
                 <div id="icon1">
-                <ReactAnimatedWeather
-                icon={"CLEAR_DAY"}
-                color={defaults.color}
-                size={defaults.size}
-                animate={defaults.animate}
-              />
+                    <ReactAnimatedWeather
+                        icon={"CLEAR_DAY"}
+                        color={defaults.color}
+                        size={defaults.size}
+                        animate={defaults.animate}/>
                 </div>
                 </div>
-                <div id="details">
-                  <p>Humidity: {this.state.humidity}</p>
-                  <p>Wind: {this.state.windspeed} M/S</p>
-                  <p>Date: {this.state.date}</p>
-                </div>
-                <div>
+                <div id="forecast">
+                <div id="item1">
                   <p>time: {this.state.timeFirst}</p>
-                  <p>Temp: {this.state.tempFirst}</p>
+                  <p>{this.state.tempFirst}{this.state.symbol}</p>
                   <p>H : {h}</p>
                 </div>
-                <div>
+                <div id="item2">
                   <p>time: {this.state.timeSec}</p>
-                  <p>Temp: {this.state.tempSec}</p>
+                  <p>{this.state.tempSec}{this.state.symbol}</p>
                   <p>H : {next}</p>
                 </div>
-                <div>
+                <div id="item3">
                   <p>time: {this.state.timeThird}</p>
-                  <p>Temp: {this.state.tempThird}</p>
+                  <p>{this.state.tempThird}{this.state.symbol}</p>
                   <p>H : {secNext}</p>
                 </div>
               </div>
+            </div>
         
             );
         
