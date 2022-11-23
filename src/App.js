@@ -154,7 +154,7 @@ class App extends React.Component{
                     <p>{this.state.temp}</p>
                     <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
-                  <p>{this.state.weather}</p>
+                  <p id="weather">{this.state.weather}</p>
                 </main>
                 <section>
                     <p>Humidity: {this.state.humidity}</p>
@@ -217,7 +217,7 @@ class App extends React.Component{
                     <p>{this.state.temp}</p>
                     <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
-                  <p>{this.state.weather}</p>
+                  <p id="weather">{this.state.weather}</p>
                 </main>
                 <section>
                     <p>Humidity: {this.state.humidity}</p>
@@ -280,7 +280,7 @@ class App extends React.Component{
                     <p>{this.state.temp}</p>
                     <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
-                  <p>{this.state.weather}</p>
+                  <p id="weather">{this.state.weather}</p>
                 </main>
                 <section>
                     <p>Humidity: {this.state.humidity}</p>
@@ -342,7 +342,7 @@ class App extends React.Component{
                     <p>{this.state.temp}</p>
                     <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
-                  <p>{this.state.weather}</p>
+                  <p id="weather">{this.state.weather}</p>
                 </main>
                 <section>
                     <p>Humidity: {this.state.humidity}</p>
@@ -404,7 +404,7 @@ class App extends React.Component{
                     <p>{this.state.temp}</p>
                     <button onClick={this.toggle}>{this.state.symbol}</button>
                   </div>
-                  <p>{this.state.weather}</p>
+                  <p id="weather">{this.state.weather}</p>
                 </main>
                 <section>
                     <p>Humidity: {this.state.humidity}</p>
