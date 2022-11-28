@@ -7,7 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
     /*background: url("https://www.dropbox.com/s/gbd8upnanqjj2z0/BG.jpeg?raw=1") no-repeat center center fixed;*/
     /*background: linear-gradient(0deg, rgba(0, 0, 200, 0.2) , rgba(0, 0, 200, 0) );*/
-    background-color: #348AC7;
+    /*background-color: #86B9E0*/
+    /*      : url(https://www.dropbox.com/s/gbd8upnanqjj2z0/BG.jpeg?raw=1) no-repeat center center fixed;*/
+    background: linear-gradient(90deg , #0a9dfb , #84d4fc);
 }
 
 code {
@@ -29,4 +31,5 @@ p{
     font-size: 10px;
   }
 }
+
 
