@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -25,7 +27,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color:skyblue;
 }
 
 @keyframes App-logo-spin {
@@ -36,41 +38,75 @@
     transform: rotate(360deg);
   }
 }
-#row{
+#location{
+  display:flex;
+  flex-wrap: nowrap;
+  border: 5px solid white;
+  justify-content: center;
+  margin-left:  45vh;
+  margin-right: 55vh;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  margin-top: 10px;
+  padding-top: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#city{
+ margin-left: 10px;
+ margin-right: 15px;
+}
+#comma{
+  margin-right: 10px;
+}
+#date{
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  align-items: center;
+  margin-left: 45vh;
+  margin-right: 55vh;
   margin-top: 15vh;
-  text-align: justify;
 }
-
-main div{
+#day , #month , #dt, #year{
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+main{
   display: flex;
-  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: 45vh;
+  margin-right: 55vh;
 }
-main div p{
-  font-size: 15vh;
-  color: white;
+#temp{
+ display: flex;
+ flex-wrap: nowrap;
+ margin-right: 75vh;
 }
 button{
-  font-size: 8vh;
-  margin-top: 1vh;
-  width: 10vh;
-  height: 10vh;
-  background:#348AC7;
-  border: 0px solid #348AC7;
-  color: white;
+height: 10vh;
+width: 10vh;
+background-color:rgba(10, 159, 251, 0);
+border: 0.5px solid rgba(10, 157, 251,0.1);
+color: white;
+font-size: 10vh;
 }
-#weather{
-  font-size: 5vh;
+#temp p{
+  font-size: 20vh;
   color: white;
-  margin-left: 10px;
-  margin-top: -5%;
+  padding: 5px;
 }
+#weather2 p{
+  padding-left: 4vh;
+  padding-top: 5vh;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+
 
 
 
