@@ -257,22 +257,26 @@ class App extends React.Component{
           <footer>
             <div id="forecast">
               <div id="item1">
-                  <p>time: {this.state.timeFirst}{zone}</p>
-                  <p>{this.state.tempFirst}{'\u00b0'.concat('C')}</p>
-                  <p>{this.state.weather}</p>
+                  <p id='i11'>{this.state.timeFirst}{zone}</p>
+                  <p id='i12'>{this.state.tempFirst}{'\u00b0'.concat('C')}</p>
+                  <p id='i13'>{this.state.weather}</p>
               </div>
               <div id="item2">
-                  <p>time: {this.state.timeSec}{zonea}</p>
-                  <p>{this.state.tempSec}{'\u00b0'.concat('C')}</p>
-                  <p>{this.state.weather}</p>
+                  <p id='i21'>{this.state.timeSec}{zonea}</p>
+                  <p id='i22'>{this.state.tempSec}{'\u00b0'.concat('C')}</p>
+                  <p id='i23'>{this.state.weather}</p>
               </div>
               <div id="item3">
-                  <p>time: {this.state.timeThird}{zoneb}</p>
-                  <p>{this.state.tempThird}{'\u00b0'.concat('C')}</p>
-                  <p>{this.state.weather}</p>
+                  <p id='i31'>{this.state.timeThird}{zoneb}</p>
+                  <p id='i32'>{this.state.tempThird}{'\u00b0'.concat('C')}</p>
+                  <p id='i33'>{this.state.weather}</p>
                 </div>
             </div>
           </footer>
+          <div id="additional">
+            <p id='wind'>Wind Speed: {this.state.windspeed}m/s</p>
+            <p id='humidity'>Humidity: {this.state.humidity}%</p>
+          </div>
 
         </div>
       )
