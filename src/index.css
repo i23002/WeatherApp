@@ -25,6 +25,11 @@ code {
   font-weight: bold;
   color: greenyellow;
 }
+@media (max-width: 815px){
+  #copy{
+    font-size: 3vh;
+  }
+}
 
 
 
