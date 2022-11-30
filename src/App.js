@@ -84,7 +84,7 @@ var weather = ""
 const defaults = {
   icon: "",
   color: "white",
-  size: 112,
+  size: 100,
   animate: true,
 };
 
